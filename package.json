@@ -7,6 +7,10 @@
   "bin": {
     "quick-cli": "./lib/index.js"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "engines": {
     "node": ">=10"
   },
