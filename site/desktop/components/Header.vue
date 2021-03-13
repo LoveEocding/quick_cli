@@ -6,15 +6,12 @@
           <img :src="config.logo" />
           <span>{{ config.title }}</span>
         </a>
-
-        <search-input
-          v-if="searchConfig"
-          :lang="lang"
-          :search-config="searchConfig"
-        />
-
         <ul class="van-doc-header__top-nav">
-          <li v-for="item in config.links" class="van-doc-header__top-nav-item">
+          <li
+            v-for="(item, key) in config.links"
+            :key="key"
+            class="van-doc-header__top-nav-item"
+          >
             <a
               class="van-doc-header__logo-link"
               target="_blank"
@@ -37,7 +34,8 @@
               <transition name="van-doc-dropdown">
                 <div v-if="showVersionPop" class="van-doc-header__version-pop">
                   <div
-                    v-for="item in versions"
+                    v-for="(item, key) in versions"
+                    :key="key"
                     class="van-doc-header__version-pop-item"
                     @click="onSwitchVersion(item)"
                   >
@@ -58,14 +56,10 @@
 </template>
 
 <script>
-import SearchInput from './SearchInput';
-
 export default {
-  name: 'van-doc-header',
+  name: "van-doc-header",
 
-  components: {
-    SearchInput,
-  },
+  components: {},
 
   props: {
     lang: String,
@@ -107,9 +101,9 @@ export default {
     toggleVersionPop() {
       const val = !this.showVersionPop;
 
-      const action = val ? 'add' : 'remove';
+      const action = val ? "add" : "remove";
       document.body[`${action}EventListener`](
-        'click',
+        "click",
         this.checkHideVersionPop
       );
 
@@ -136,7 +130,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
+@import "../../common/style/var";
 
 .van-doc-header {
   width: 100%;
@@ -199,7 +193,7 @@ export default {
       border: 1px solid;
       border-color: transparent transparent currentColor currentColor;
       transform: rotate(-45deg);
-      content: '';
+      content: "";
     }
 
     &-pop {
