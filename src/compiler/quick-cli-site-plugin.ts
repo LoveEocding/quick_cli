@@ -22,7 +22,7 @@ export async function genSiteEntry() {
         });
         genSiteMobileShared();
         genSiteDesktopShared();
-        resolve();
+        resolve(void (0));
       })
       .catch(err => {
         console.log(err);

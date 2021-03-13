@@ -6,7 +6,7 @@ import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { WebpackConfig } from '../common/types';
 import { getQuickConfig, getWebpackConfig } from '../common';
-import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
+import { QuickCliSitePlugin } from '../compiler/quick-cli-site-plugin';
 import {
   GREEN,
   SITE_MODILE_SHARED_FILE,
@@ -80,7 +80,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         name: 'Quick Cli',
         color: GREEN,
       }),
-      new VantCliSitePlugin(),
+      new QuickCliSitePlugin(),
       new HtmlWebpackPlugin({
         title,
         logo: siteConfig.logo,
