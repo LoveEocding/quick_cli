@@ -18,7 +18,7 @@ const DEFAULT_CONFIG = {
     '\\.(vue)$': 'vue-jest',
     '\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
-  transformIgnorePatterns: ['/node_modules/(?!(@vant/cli))/'],
+  transformIgnorePatterns: ['/node_modules/(?!(@quick/cli))/'],
   snapshotSerializers: ['jest-serializer-vue'],
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx,vue}', '!**/demo/**'],

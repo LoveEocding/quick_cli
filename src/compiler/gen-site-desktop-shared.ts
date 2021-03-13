@@ -4,7 +4,7 @@ import { existsSync, readdirSync } from 'fs-extra';
 import {
   pascalize,
   removeExt,
-  getVantConfig,
+  getQuickConfig,
   smartOutputFile,
   normalizePath,
 } from '../common';
@@ -12,7 +12,7 @@ import {
   SRC_DIR,
   DOCS_DIR,
   getPackageJson,
-  VANT_CONFIG_FILE,
+  QUICK_CONFIG_FILE,
   SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant';
 
@@ -40,8 +40,8 @@ function formatName(component: string, lang?: string) {
  *   - action-sheet/README.md => ActionSheet
  */
 function resolveDocuments(components: string[]): DocumentItem[] {
-  const vantConfig = getVantConfig();
-  const { locales, defaultLang } = vantConfig.site;
+  const quickConfig = getQuickConfig();
+  const { locales, defaultLang } = quickConfig.site;
 
   const docs: DocumentItem[] = [];
 
@@ -89,7 +89,7 @@ function genExportDocuments(items: DocumentItem[]) {
 }
 
 function genImportConfig() {
-  return `import config from '${removeExt(normalizePath(VANT_CONFIG_FILE))}';`;
+  return `import config from '${removeExt(normalizePath(QUICK_CONFIG_FILE))}';`;
 }
 
 function genExportConfig() {

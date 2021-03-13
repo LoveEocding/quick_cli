@@ -5,7 +5,7 @@ import { get } from 'lodash';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { WebpackConfig } from '../common/types';
-import { getVantConfig, getWebpackConfig } from '../common';
+import { getQuickConfig, getWebpackConfig } from '../common';
 import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
   GREEN,
@@ -14,11 +14,11 @@ import {
 } from '../common/constant';
 
 export function getSiteDevBaseConfig(): WebpackConfig {
-  const vantConfig = getVantConfig();
-  const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
+  const quickConfig = getQuickConfig();
+  const baiduAnalytics = get(quickConfig, 'site.baiduAnalytics');
 
   function getSiteConfig() {
-    const siteConfig = vantConfig.site;
+    const siteConfig = quickConfig.site;
 
     if (siteConfig.locales) {
       return siteConfig.locales[siteConfig.defaultLang || 'en-US'];
@@ -39,7 +39,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
 
   const siteConfig = getSiteConfig();
   const title = getTitle(siteConfig);
-  const { htmlPluginOptions } = vantConfig.site;
+  const { htmlPluginOptions } = quickConfig.site;
 
   return merge(baseConfig as any, {
     entry: {
@@ -77,7 +77,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
     },
     plugins: [
       new WebpackBar({
-        name: 'Vant Cli',
+        name: 'Quick Cli',
         color: GREEN,
       }),
       new VantCliSitePlugin(),

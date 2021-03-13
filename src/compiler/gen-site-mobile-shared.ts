@@ -5,7 +5,7 @@ import {
   pascalize,
   removeExt,
   decamelize,
-  getVantConfig,
+  getQuickConfig,
   smartOutputFile,
   normalizePath,
 } from '../common';
@@ -45,7 +45,7 @@ function getSetName(demos: DemoItem[]) {
 }
 
 function genConfig(demos: DemoItem[]) {
-  const vantConfig = getVantConfig();
+  const quickConfig = getQuickConfig();
   const demoNames = demos.map(item => decamelize(item.name));
 
   function demoFilter(nav: any[]) {
@@ -57,7 +57,7 @@ function genConfig(demos: DemoItem[]) {
     });
   }
 
-  const { nav, locales } = vantConfig.site;
+  const { nav, locales } = quickConfig.site;
   if (locales) {
     Object.keys(locales).forEach((lang: string) => {
       if (locales[lang].nav) {
@@ -65,10 +65,10 @@ function genConfig(demos: DemoItem[]) {
       }
     });
   } else if (nav) {
-    vantConfig.site.nav = demoFilter(nav);
+    quickConfig.site.nav = demoFilter(nav);
   }
 
-  return `export const config = ${JSON.stringify(vantConfig, null, 2)}`;
+  return `export const config = ${JSON.stringify(quickConfig, null, 2)}`;
 }
 
 function genCode(components: string[]) {

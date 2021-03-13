@@ -2,7 +2,7 @@ import releaseIt from 'release-it';
 import { build } from '../commands/build';
 import { changelog } from '../commands/changelog';
 
-class VantCliReleasePlugin extends releaseIt.Plugin {
+class QuickCliReleasePlugin extends releaseIt.Plugin {
   async beforeRelease() {
     // log an empty line
     console.log('');
@@ -12,4 +12,4 @@ class VantCliReleasePlugin extends releaseIt.Plugin {
   }
 }
 
-module.exports = VantCliReleasePlugin;
+module.exports = QuickCliReleasePlugin;

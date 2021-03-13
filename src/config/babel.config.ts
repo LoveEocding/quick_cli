@@ -1,6 +1,6 @@
 import { ConfigAPI } from '@babel/core';
 
-module.exports = function(api?: ConfigAPI) {
+module.exports = function (api?: ConfigAPI) {
   if (api) {
     api.cache.never();
   }
@@ -38,11 +38,11 @@ module.exports = function(api?: ConfigAPI) {
       [
         'import',
         {
-          libraryName: 'vant',
+          libraryName: 'quick',
           libraryDirectory: useESModules ? 'es' : 'lib',
           style: true,
         },
-        'vant',
+        'quick',
       ],
       '@babel/plugin-transform-object-assign',
     ],

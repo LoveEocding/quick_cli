@@ -65,9 +65,9 @@ yarn add @quickAct/cli --dev
 
 ## 详细文档
 
-- [命令](https://github.com/youzan/Quick/tree/dev/packages/Quick-cli/docs/commands.md)
-- [配置指南](https://github.com/youzan/Quick/tree/dev/packages/Quick-cli/docs/config.md)
-- [目录结构](https://github.com/youzan/Quick/tree/dev/packages/Quick-cli/docs/directory.md)
-- [更新日志](https://github.com/youzan/Quick/tree/dev/packages/Quick-cli/changelog.md)
+- [命令](https://github.com/LoveEocding/quick_cli/docs/commands.md)
+- [配置指南](https://github.com/LoveEocding/quick_cli/docs/config.md)
+- [目录结构](https://github.com/LoveEocding/quick_cli/docs/directory.md)
+- [更新日志](https://github.com/LoveEocding/quick_cli/changelog.md)
 
 

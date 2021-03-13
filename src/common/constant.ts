@@ -3,7 +3,7 @@ import { existsSync } from 'fs-extra';
 import { join, dirname, isAbsolute } from 'path';
 
 function findRootDir(dir: string): string {
-  if (existsSync(join(dir, 'vant.config.js'))) {
+  if (existsSync(join(dir, 'quick.config.js'))) {
     return dir;
   }
 
@@ -26,7 +26,7 @@ export const LIB_DIR = join(ROOT, 'lib');
 export const DOCS_DIR = join(ROOT, 'docs');
 export const VETUR_DIR = join(ROOT, 'vetur');
 export const SITE_DIST_DIR = join(ROOT, 'site');
-export const VANT_CONFIG_FILE = join(ROOT, 'vant.config.js');
+export const QUICK_CONFIG_FILE = join(ROOT, 'quick.config.js');
 export const PACKAGE_JSON_FILE = join(ROOT, 'package.json');
 export const ROOT_WEBPACK_CONFIG_FILE = join(ROOT, 'webpack.config.js');
 export const ROOT_POSTCSS_CONFIG_FILE = join(ROOT, 'postcss.config.js');
@@ -64,19 +64,19 @@ export function getPackageJson() {
   return require(PACKAGE_JSON_FILE);
 }
 
-export function getVantConfig() {
-  delete require.cache[VANT_CONFIG_FILE];
+export function getQuickConfig() {
+  delete require.cache[QUICK_CONFIG_FILE];
 
   try {
-    return require(VANT_CONFIG_FILE);
+    return require(QUICK_CONFIG_FILE);
   } catch (err) {
     return {};
   }
 }
 
 function getSrcDir() {
-  const vantConfig = getVantConfig();
-  const srcDir = get(vantConfig, 'build.srcDir');
+  const quickConfig = getQuickConfig();
+  const srcDir = get(quickConfig, 'build.srcDir');
 
   if (srcDir) {
     if (isAbsolute(srcDir)) {

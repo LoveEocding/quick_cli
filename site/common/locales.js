@@ -1,6 +1,6 @@
 const ZH_CN = 'zh-CN';
 const EN_US = 'en-US';
-const CACHE_KEY = 'vant-cli-lang';
+const CACHE_KEY = 'quick-cli-lang';
 
 let currentLang = ZH_CN;
 

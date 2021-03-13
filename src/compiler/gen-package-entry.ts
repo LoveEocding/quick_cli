@@ -6,7 +6,7 @@ import {
   smartOutputFile,
   normalizePath,
 } from '../common';
-import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
+import { SRC_DIR, getPackageJson, getQuickConfig } from '../common/constant';
 
 type Options = {
   outputPath: string;
@@ -32,8 +32,8 @@ function genExports(names: string[]): string {
 
 export function genPackageEntry(options: Options) {
   const names = getComponents();
-  const vantConfig = getVantConfig();
-  const skipInstall = get(vantConfig, 'build.skipInstall', []).map(pascalize);
+  const quickConfig = getQuickConfig();
+  const skipInstall = get(quickConfig, 'build.skipInstall', []).map(pascalize);
   const version = process.env.PACKAGE_VERSION || getPackageJson().version;
 
   const components = names.map(pascalize);

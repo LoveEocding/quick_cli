@@ -1,5 +1,5 @@
 {
-  "name": "@quickact_vue/cli",
+  "name": "@quick_vue/cli",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -28,9 +28,9 @@
     "preset.js"
   ],
   "keywords": [
-    "vant"
+    "quick"
   ],
-  "author": "chenjiahan",
+  "author": "nieyao",
   "license": "MIT",
   "peerDependencies": {
     "vue": "^2.5.22",

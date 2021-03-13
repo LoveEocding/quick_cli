@@ -15,9 +15,9 @@ import { changelog } from './commands/changelog';
 import { buildSite } from './commands/build-site';
 import { commitLint } from './commands/commit-lint';
 
-version(`@vant/cli ${packageJson.version}`);
+version(`@quick/cli ${packageJson.version}`);
 
-process.env.VANT_CLI_VERSION = packageJson.version;
+process.env.QUICK_CLI_VERSION = packageJson.version;
 
 command('dev')
   .description('Run webpack dev server')

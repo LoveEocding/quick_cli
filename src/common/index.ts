@@ -7,7 +7,7 @@ import {
   outputFileSync,
 } from 'fs-extra';
 import merge from 'webpack-merge';
-import { SRC_DIR, getVantConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
+import { SRC_DIR, getQuickConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
 import { WebpackConfig } from './types';
 
 export const EXT_REGEXP = /\.\w+$/;
@@ -146,4 +146,4 @@ export function smartOutputFile(filePath: string, content: string) {
   outputFileSync(filePath, content);
 }
 
-export { getVantConfig };
+export { getQuickConfig };

@@ -50,7 +50,7 @@ if (existsSync(tsconfigPath)) {
       vue: { enabled: true },
       logger: {
         // skip info message
-        info() {},
+        info() { },
         warn(message: string) {
           consola.warn(message);
         },
@@ -85,7 +85,7 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,
-        exclude: /node_modules\/(?!(@vant\/cli))/,
+        exclude: /node_modules\/(?!(@quick\/cli))/,
         use: [CACHE_LOADER, 'babel-loader'],
       },
       {
